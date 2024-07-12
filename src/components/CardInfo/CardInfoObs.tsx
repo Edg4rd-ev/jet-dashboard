@@ -6,8 +6,14 @@ import {
   TooltipProvider,
   TooltipTrigger
 } from '../ui/tooltip'
+import { ReactNode } from 'react'
+import { ScrollArea } from '../ui/scroll-area'
 
-export default function CardInfoObs() {
+type ICardInfoObs = {
+  children: ReactNode
+}
+
+export default function CardInfoObs({ children }: ICardInfoObs) {
   return (
     <Card>
       <CardHeader>
@@ -29,27 +35,11 @@ export default function CardInfoObs() {
           </TooltipProvider>
         </CardTitle>
       </CardHeader>
-      <CardContent>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id
-          exercitationem natus hic, corrupti soluta aliquid. Sunt perspiciatis
-          voluptates vero, delectus nostrum tempore modi eum molestias obcaecati
-          aliquam consectetur maiores molestiae! Lorem ipsum dolor, sit amet
-          consectetur adipisicing elit. Id exercitationem natus hic, corrupti
-          soluta aliquid. Sunt perspiciatis voluptates vero, delectus nostrum
-          tempore modi eum molestias obcaecati aliquam consectetur maiores
-          molestiae!Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id
-          exercitationem natus hic, corrupti soluta aliquid. Sunt perspiciatis
-          voluptates vero, delectus nostrum tempore modi eum molestias obcaecati
-          aliquam consectetur maiores molestiae!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-          distinctio magnam assumenda eius? Cupiditate quae fuga sapiente
-          laudantium natus nesciunt nihil sint ipsam officiis soluta! Eaque
-          ipsam a amet possimus.
-        </p>
-      </CardContent>
+      <ScrollArea className="h-[21.6rem] w-full rounded-xl border p-4">
+        <CardContent className="text-justify w-full h-full">
+          {children}
+        </CardContent>
+      </ScrollArea>
     </Card>
   )
 }

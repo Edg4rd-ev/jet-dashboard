@@ -37,7 +37,7 @@ export default function CardInfoEmpregado({
     <StarFilledIcon className="text-amber-400" />
   ]
   return (
-    <Card className="grid grid-cols-5 gap-4 items-center hover:border hover:border-primary hover:cursor-pointer">
+    <Card className="w-full grid grid-cols-5 gap-4 items-center hover:border hover:border-primary hover:cursor-pointer">
       <CardHeader className="flex items-center justify-center">
         <CardTitle>
           <Avatar>
